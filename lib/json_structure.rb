@@ -9,6 +9,8 @@ require 'json_structure/value'
 require 'json_structure/any'
 require 'json_structure/boolean'
 
+require 'json_structure/version'
+
 module JsonStructure
   def self.build(&block)
     Builder.new.instance_eval(&block)
