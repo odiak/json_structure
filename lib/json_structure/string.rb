@@ -9,9 +9,9 @@ module JsonStructure
     def ===(value)
       return false unless value.is_a?(::String)
 
-      return false unless @min_length && value.size < @min_length
-      return false unless @max_length && value.size > @max_length
-      return false unless @pattern && pattern =~ value
+      return false if @min_length && value.size < @min_length
+      return false if @max_length && value.size > @max_length
+      return false if @pattern && @pattern !~ value
       true
     end
   end
