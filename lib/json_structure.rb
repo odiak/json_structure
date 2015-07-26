@@ -19,7 +19,6 @@ module JsonStructure
       Array
       Number
       Integer
-      Float
       String
       Null
       AnyOf

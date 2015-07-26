@@ -20,11 +20,4 @@ module JsonStructure
       super
     end
   end
-
-  class Float < Number
-    def ===(value)
-      return false unless value.is_a?(::Float)
-      super
-    end
-  end
 end
