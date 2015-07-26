@@ -13,18 +13,20 @@ module JsonStructure
   end
 
   class Builder
-    [
-      Type,
-      Object_,
-      Array,
-      Number,
-      Integer,
-      Float,
-      String,
-      Null,
-      AnyOf,
-    ].each do |klass|
-      method = klass.name
+    %w[
+      Type
+      Object_
+      Array
+      Number
+      Integer
+      Float
+      String
+      Null
+      AnyOf
+    ].each do |name|
+      klass = JsonStructure.const_get(name)
+
+      method = name
         .gsub(/([a-z])([A-Z])/, '\1_\2')
         .gsub(/_+$/, '')
         .downcase
