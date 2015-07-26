@@ -1,7 +1,7 @@
 module JsonStructure
   class Object_ < Type
     def initialize(hash = nil)
-      @hash = hash.each_with_object({}) do |(key, value), new_hash|
+      @hash = hash && hash.each_with_object({}) do |(key, value), new_hash|
         new_hash[key.to_s] = value
       end
     end
