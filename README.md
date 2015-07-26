@@ -2,7 +2,7 @@
 
 ```ruby
 user = JsonStructure.build do
-  hash({
+  object({
     id: integer,
     username: string(max_length: 30),
     address: string | null,
@@ -30,11 +30,11 @@ user === {
 ```ruby
 products_array = JsonStructure.build do
   array(
-    hash({
+    object({
       id: integer,
       name: string,
       price: integer(min: 0),
-      maker: hash({
+      maker: object({
         id: integer,
         name: string,
       }) | null,
